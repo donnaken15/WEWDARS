@@ -1,12 +1,12 @@
 @echo off
-cd "%~dp0"
+pushd "%~dp0"
 title WEWDARS
 echo.--- WEWDARS ---
 echo.Stopping services
-for /f "usebackq delims=" %%S in ("UnnecessaryServices.txt") do ( echo y | net stop "%%~S" >nul 2>nul && echo - Stopped %%~S )
+for /f "usebackq delims=" %%S in ("UnnecessaryServices.txt") do ( echo - Stopping %%~S && start "" /min cmd /c echo y ^| net stop "%%~S" ^>nul 2^>nul )
 echo.Ending processes
 for /f "usebackq delims=" %%S in ("UWP.txt","UnnecessaryProcesses.txt") do ( taskkill /f /im "%%~S" 2>nul )
-set PASSES=2
+for /f "usebackq tokens=*" %%v in (`call KeyValue EmptyRAMRunCount 2`) do ( set PASSES=%%v )
 echo Cleaning memory (%PASSES% times)
 for /L %%I in (1,1,%PASSES%) do (
 	echo.--- Run %%I ---
@@ -18,7 +18,8 @@ for /L %%I in (1,1,%PASSES%) do (
 		"m,Modified page list"
 	) do (
 		for /f "tokens=1,2 delims=," %%A in ( "%%~C" ) do (
-			echo.  - %%~B && rammap -E%%~A && echo.    - Done
+			echo.  - %%~B && "%~dp0tools\rammap" -E%%~A && echo.    - Done
 		)
 	)
 )
+popd
