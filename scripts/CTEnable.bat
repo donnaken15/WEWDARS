@@ -1,0 +1,1 @@
+@start "Enabling classic theme..." "%~dp0tools\miniSCT" 1

@@ -1,42 +1,42 @@
  \/                                                                          \/ 
--()-                      (Press Q to return to menu.)                      -()-
- /\         __    __    ____________  ___________________________            /\ 
-(--)        \ \   | \   |  ____  | | / /  __  __   __/ _ \|  ____|          (--)
- \/          \ \  |  \  | |   / /| |/ /| |__) ) | | / / \_| |___             \/ 
--()-          \ \ |   \ | |  / / |   ( |    _/  | || |    |  ___|           -()-
- /\            \ \| |\ \| | / /  | |\ \| |\ \   | || |   _| |                /\ 
-(--)            \   | \   |/ /___| | \ \ | \ \__| |_\ \_/ | |____           (--)
- \/              \__|  \__|________|  \__|  \________\___/|______|           \/ 
+-()-                      [97m(Press Q to return to menu.)[0m                      -()-
+ /\         [36m__    __    ____________  ___________________________ [0m           /\ 
+(--)        [36m\ \   | \   |  [96m____[36m  | | / /  [96m__[36m \[96m__[36m   [96m__[36m/ [96m_[36m \|  [96m____[36m][0m          (--)
+ \/         [96m \ \  |  \  | |   / /| |/ /| |__) | | | / / \[97m_[96m| |     [0m           \/ 
+-()-        [97m  \ \ |   \ | |  / / |   ( |    _.' | || |    | `---. [0m          -()-
+ /\         [97m   \ \| |\ \| | / /  | |\ \| |\ \   | || |   _| .---' [0m           /\ 
+(--)        [96m    \   | \   |/ [4m/[24m___| | \ ` | \ \__| |_[4m\[24m \_/ | |____ [0m          (--)
+ \/         [36m     \__|  \__|________|  \__|  \________\___/|______][0m           \/ 
 -()-                                                                        -()-
- /\    Wesley's Extreme Windows Denormifying and Anticorpo Ricing System     /\ 
+ /\    [37mWesley's Extreme Windows Denormifying and Anticorpo Ricing System[0m     /\ 
 (--)                                                                        (--)
  \/    A Batch Script                                                        \/ 
--()-                                CREDITS                                 -()-
+-()-                                [0mCREDITS[0m                                 -()-
  /\                                                                          /\ 
 (--)   /---                   ===                                    ---\   (--)
- \/   /----  Wesley Kennedy   ===  Creator, programmer, main script  ----\   \/ 
--()--<-----  WinClassic (<3)  ===  Windows Classic hacks             ----->--()-
- /\   \----  r/TronScript     ===  TronScript                        ----/   /\ 
+ \/   /----  [38;5;48mWesley Kennedy[0m   ===  Creator, programmer, main script  ----\   \/ 
+-()--<-----  [36mWin[90mClassic [91m♥[0m     ===  Windows Classic hacks             ----->--()-
+ /\   \----  [94mr/TronScript[0m     ===  TronScript                        ----/   /\ 
 (--)   \---                   ===                                    ---/   (--)
  \/                                                                          \/ 
 -()-     VARIOUS TOOL COLLECTIONS BY                                        -()-
- /\          Sysinternals, Nirsoft, GNU (MSYS2)                              /\ 
-(--)                                                                        (--)
+ /\          [107;34mSysinternals[0m, [45;96mNirsoft[0m, [92mCygwin[0m, [97mGNU [35m(MSYS2)[0m,                     /\ 
+(--)         [104;93mBYTE*[0m, [107;94mA[30mLUIGI[0m                                                  (--)
  \/                                                                          \/ 
 -()-                                                                        -()-
  /\                                                                          /\ 
 (--)                                                                        (--)
  \/                                                                          \/ 
 -()-                                                                        -()-
- /\                                                                          /\ 
-(--)                                                                        (--)
- \/                                                                          \/ 
--()-                                                                        -()-
- /\                                                                          /\ 
-(--)                                                                        (--)
- \/                                                                          \/ 
--()-                                                                        -()-
- /\                                                                          /\ 
+ /\      Links:                                                              /\ 
+(--)         [96;4mhttps://donnaken15.cf[0m                                          (--)
+ \/          [96;4mhttps://github.com/donnaken15/WEWDARS[0m                           \/ 
+-()-         [96;4mhttps://winclassic.net[0m                                         -()-
+ /\          [96;4mhttps://sysinternals.com[0m                                        /\ 
+(--)         [96;4mhttps://nirsoft.net[0m                                            (--)
+ \/          [96;4mhttps://bytepointer.com[0m                                         \/ 
+-()-         [96;4mhttps://aluigi.altervista.org/mytools.htm[0m                      -()-
+ /\          [96;4mhttps://cygwin.com[0m                                              /\ 
 (--)                                                                        (--)
  \/                                                                          \/ 
 -()-                                                                        -()-

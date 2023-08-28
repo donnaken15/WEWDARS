@@ -1,0 +1,8 @@
+
+	NOTES:
+
+	This is an installer like script designed for power users and super users (like me),
+	and is recommended to be used on a computer that solely belongs to you, or has only
+	one user profile available on it.
+	
+	This script has only been tested on a Windows 10 64-bit/AtlasOS virtual machine.

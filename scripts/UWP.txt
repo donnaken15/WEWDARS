@@ -1,0 +1,8 @@
+ApplicationFrameHost.exe
+WinStore.App.exe
+ShellExperienceHost.exe
+RuntimeBroker.exe
+SearchApp.exe
+SettingSyncHost.exe
+StartMenuExperience.exe
+TextInputHost.exe

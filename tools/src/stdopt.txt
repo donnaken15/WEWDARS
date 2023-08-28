@@ -1,0 +1,2 @@
+-target:winexe -debug- -nostdlib- -o+ -reference:System.Drawing.dll -reference:System.Windows.Forms.dll
+--runtime:v1 -sdk:2

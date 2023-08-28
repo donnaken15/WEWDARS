@@ -2,3 +2,8 @@
 /deps
 * - Copy*
 * (*)*
+bin/
+obj/
+*.log
+/tools/src/MiniSCT/NtApiDotNet
+.vs

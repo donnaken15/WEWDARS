@@ -1,0 +1,7 @@
+crashpad_handler.exe
+gamingservices.exe
+dllhost.exe
+rundll32.exe
+HelpPane.exe
+smartscreen.exe
+WmiPrvSE.exe
