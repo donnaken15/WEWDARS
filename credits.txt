@@ -27,21 +27,21 @@
  /\                                                                          /\ 
 (--)                                                                        (--)
  \/                                                                          \/ 
--()-                                                                        -()-
- /\      Links:                                                              /\ 
-(--)         [96;4mhttps://donnaken15.cf[0m                                          (--)
- \/          [96;4mhttps://github.com/donnaken15/WEWDARS[0m                           \/ 
--()-         [96;4mhttps://winclassic.net[0m                                         -()-
- /\          [96;4mhttps://sysinternals.com[0m                                        /\ 
-(--)         [96;4mhttps://nirsoft.net[0m                                            (--)
- \/          [96;4mhttps://bytepointer.com[0m                                         \/ 
--()-         [96;4mhttps://aluigi.altervista.org/mytools.htm[0m                      -()-
- /\          [96;4mhttps://cygwin.com[0m                                              /\ 
+-()-     Tested on:                                                         -()-
+ /\          Atlas OS v0.5.2                                                 /\ 
 (--)                                                                        (--)
- \/                                                                          \/ 
+ \/      Links:                                                              \/ 
+-()-         [96;4mhttps://donnaken15.cf[0m                                          -()-
+ /\          [96;4mhttps://github.com/donnaken15/WEWDARS[0m                           /\ 
+(--)         [96;4mhttps://winclassic.net[0m                                         (--)
+ \/          [96;4mhttps://sysinternals.com[0m                                        \/ 
+-()-         [96;4mhttps://nirsoft.net[0m                                            -()-
+ /\          [96;4mhttps://bytepointer.com[0m                                         /\ 
+(--)         [96;4mhttps://aluigi.altervista.org/mytools.htm[0m                      (--)
+ \/          [96;4mhttps://cygwin.com[0m                                              \/ 
 -()-                                                                        -()-
- /\                                                                          /\ 
-(--)                                                                        (--)
+ /\      Resources:                                                          /\ 
+(--)         ss64.com, StackOverflow, WinClassic, WinAero                   (--)
  \/                                                                          \/ 
 -()-                                                                        -()-
  /\                                                                          /\ 

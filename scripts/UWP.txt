@@ -4,5 +4,6 @@ ShellExperienceHost.exe
 RuntimeBroker.exe
 SearchApp.exe
 SettingSyncHost.exe
+SystemSettings.exe
 StartMenuExperience.exe
 TextInputHost.exe

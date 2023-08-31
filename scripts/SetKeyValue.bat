@@ -1,34 +1,36 @@
 @echo off
-:: batch ruined this script for me
-:: with all this stupid local stuff
 setlocal EnableDelayedExpansion
+(set \n=^
+%=.=%
+)
+set file=
 set got=0
 if [%1]==[] exit /b 1
-if [%3]==[] (set "f=%~dp0WEWDARS.INI") else (set "f=%~3")
-if exist "!f!" (
+if [%2]==[] exit /b 1
+if [%3]==[] (set "f=WEWDARS.INI") else (set "f=%~3")
+set "x=%~1"
+if not exist "!f!" (
+    echo.%1 = %2> "!f!"
+) else (
     for /f "usebackq delims=" %%L in ("!f!") do (
         for /f "tokens=1,2 delims==" %%A in ("%%~L") do (
-            set "x=%~1"
             set "y=%%~A"
             set "z=%%~B"
             call "%~dp0trim" x
             call "%~dp0trim" y
-            call "%~dp0trim" z
             if /I "!X!"=="!Y!" (
                 set got=1
-                echo.!Z!
-                exit /b
+                set "z=%~2"
             )
+            call "%~dp0trim" z
+            set "file=!file!!\n!!Y! = !Z!"
         )
     )
 )
 if "%got%"=="0" (
-    if not [%2]==[] (
-        set "x=%~2"
-        call "%~dp0trim" x
-        echo.!x!
-    ) else ( echo. )
+    set "file=!file!!\n!%~1 = %~2"
 )
+echo.!file:~1!> "!f!"
 endlocal
 exit /b 0
 

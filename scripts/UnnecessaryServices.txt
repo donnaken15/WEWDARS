@@ -1,5 +1,3 @@
-WpnUserService_b9e72
-OneSyncSvc_b9e72
 Winmgmt
 UmRdpService
 lfsvc
@@ -8,3 +6,5 @@ InstallService
 GamingServices
 GamingServicesNet
 PhoneSvc
+AppReadiness
+StateRepository
