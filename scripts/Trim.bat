@@ -11,10 +11,9 @@ call set "workVar=%%%inVar%%%"
     )
 :: also trim leading
 :loop2
-    if "%workVar:~0,1%" NEQ "%stripChar%" (
-        set "%inVar%=%workVar%"
-        exit /b 0
-    ) else (
+    if "%workVar:~0,1%" EQU "%stripChar%" (
         set "workVar=%workVar:~1%"
         goto :loop2
     )
+    set "%inVar%=%workVar%"
+    exit /b 0

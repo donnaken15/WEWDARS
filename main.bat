@@ -14,16 +14,23 @@ if not "%~1"=="+" ( set WTMP=%tmp%\WZKRICE_%random%\&&set "OLDPATH=%PATH%"&& cmd
 :: |  <wesley@gmx.it>  |
 :: *-+-+-+-+-+-+-+-+-+-*
 
+:: most Windows 10 installations will have cURL now
+:: if not, get it here and put it in the same directory
+:: as the batch file: https://github.com/donnaken15/WEWDARS/raw/main/deps/curl.exe
+
 mode CON COLS=80 LINES=40 && cls
 set DDIR=%WTMP%deps\
 set PATH=%PATH%;%DDIR%
 set WLOG=%~dp0WEWDARS.LOG
 set ROOT=https://github.com/donnaken15/WEWDARS/raw/main/
-set LOG=^>^>%WLOG%
+set LOG=^>^>"%WLOG%"
 set Q=^>nul
-set ESC=[
 :: don't know if i should just even deal with colors here because it's recently
 :: added to windows 10 even if i use a compatibility layer like ansicon
+set ESC=[
+:: because can't just use CP437 symbols, stupid thing
+:: (doesn't happen on Cygwin though, which I'm not using because bloat)
+set LESSCHARSET=utf-8
 :: reg ADD HKCU\Software\Sysinternals\PSexec /v EulaAccepted /t REG_DWORD /d 1 /f
 set VER=25.08.24
 :: get build number
@@ -38,8 +45,9 @@ set subdep=call :substitutedependency
 (set \n=^
 %=.=%
 )
+set
 set seterr=call :seterr
-set to=%WINDIR%\System32\timeout /T
+set to="%WINDIR%\System32\timeout" /T
 :: differ from GNU timeout
 set where=where
 :: which is faster than where, so check if it's available
@@ -64,17 +72,17 @@ mkdir "%DDIR%"
     cls
     call :splash
     %TITLE%
-    echo        Improve your Windows experience by giving yourself more freedom,
-    echo        customization, and performance boosts.
+    echo.       Improve your Windows experience by giving yourself more freedom,
+    echo.       customization, and performance boosts.
     echo.
-    echo        Requires Windows 10 or Atlas OS
+    echo.       Requires Windows 10 or Atlas OS
     echo.
     echo.         Options: (press a key)
     echo.          I - Setup (WIP!!)
     echo.          C - Credits
     echo.          Q - Quit
     echo.
-    echo        version %VER%
+    echo.       version %VER%
 :homenorefresh
     %TITLE%
     choice/C ICQ%Q%
@@ -92,8 +100,8 @@ mkdir "%DDIR%"
     %TITLE% - %~2
     :: echo loading page %~1
     call :getexe curl
+    :: kind of pointless if you already have it
     call :getexe less
-    if "%ERRORLEVEL%"=="2" ( call :getbase pcre3.dll )
     if "1"=="1" (
         curl -Ls "%ROOT%%~1" | less -R
     ) else (

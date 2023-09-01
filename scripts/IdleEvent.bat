@@ -6,8 +6,9 @@ echo.Stopping services
 start "Kill unnecessary services" /d "%~dp0" /min cmd /c KillSvc.bat
 echo.Ending processes
 rem replace with pskill?
+rem taskkill/list rely on WMIC
 for /f "usebackq delims=" %%S in ("UWP.txt","UnnecessaryProcesses.txt") do (
-    pskill "%%~S" -nobanner >nul
+    "%~dp0tools\pskill" "%%~S" -nobanner >nul
 )
 for /f "usebackq tokens=*" %%v in (`call KeyValue EmptyRAMRunCount 2`) do (set PASSES=%%v)
 echo Cleaning memory (%PASSES% times)

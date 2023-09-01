@@ -26,8 +26,9 @@ if "%got%"=="0" (
     if not [%2]==[] (
         set "x=%~2"
         call "%~dp0trim" x
+        rem should have output var argument if possible
         echo.!x!
-    ) else ( echo. )
+    ) else (echo.)
 )
 endlocal
 exit /b 0

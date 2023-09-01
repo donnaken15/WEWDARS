@@ -6,8 +6,8 @@ set WITH=for /f "usebackq tokens=*" %%v in
 :: into a singular macros file to run for scripts that need them
 %WITH% (`call KeyValue ClassicTheme 1`) do ( if "%%v"=="1" ( echo Enabling classic theme&& "%~dp0tools\miniSCT" 1 ) )
 %WITH% (`call KeyValue AutokillDWM 0`) do ( if "%%v"=="1" ( echo Killing DWM&&call "%~dp0DWMKill" ) )
-taskkill /f /im keepalive.exe
-taskkill /f /im pe.exe
+"%~dp0tools\pskill" keepalive.exe
+"%~dp0tools\pskill" pe.exe
 echo Killing shell
 call KillShell
 echo.Suspending Shell Infrastructure Host

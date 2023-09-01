@@ -5,4 +5,5 @@ bin/
 obj/
 *.log
 /tools/src/MiniSCT/NtApiDotNet
+/config.ini
 .vs
