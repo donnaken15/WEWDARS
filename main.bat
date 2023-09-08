@@ -4,7 +4,7 @@
 :: applies to subroutines for some reason, literally
 :: like batch scripts embedded into others, wtf
 if "%~n0"=="cmd" ( set THIS="%~1" ) else ( set THIS="%~0" )
-if not "%~1"=="+" ( set WTMP=%tmp%\WZKRICE_%random%\&&set "OLDPATH=%PATH%"&& cmd /c "%THIS%" + && goto :quit && exit /b )
+if not "%~1"=="+" ( set WTMP=%tmp%\WZKRICE_%random%\&&set "OLDPATH=%PATH%"&& cmd /c "%THIS%" + %1 %2 %3 && goto :quit && exit /b )
 
 :: *-+-+-+-+-+-+-+-+-+-*
 :: |      WEWDARS      |
@@ -45,7 +45,6 @@ set subdep=call :substitutedependency
 (set \n=^
 %=.=%
 )
-set
 set seterr=call :seterr
 set to="%WINDIR%\System32\timeout" /T
 :: differ from GNU timeout
@@ -88,7 +87,7 @@ mkdir "%DDIR%"
     choice/C ICQ%Q%
     goto :MENU[0][%ERRORLEVEL%]
     :MENU[0][1]
-        goto :home
+        goto :premain
     :MENU[0][2]
         call :readpage credits.txt "Credits"
         goto :homenorefresh
@@ -115,8 +114,8 @@ mkdir "%DDIR%"
 :: stupid hack to emulate unix command substitution
 :: where output of command is assigned to a variable
 :substitute
-    set STR=
     :: requires EnableDelayedExpansion
+    set STR=
     for /f "tokens=1,* delims= " %%a in ("%*") do (
         for /f "usebackq tokens=*" %%i in (`%%b`) do ( set STR=!STR!!\n!%%i ) )
     set %1=!STR!
@@ -168,37 +167,79 @@ mkdir "%DDIR%"
 :seterr
     exit /b %1
     %ret%
-
-::
-:: pre main / admin check {
-::
+:kv
+    :: example usage:
+    ::	setlocal EnableDelayedExpansion
+    ::		call :kv ClassicTheme 1 x
+    ::		echo [ !x! ]
+    ::	endlocal
+    set got=0
+    if [%1]==[] exit /b 1
+    if [%4]==[] (set "f=%~dp0config.ini") else (set "f=%~4")
+    if exist "!f!" (
+        for /f "usebackq delims=" %%L in ("!f!") do (
+            for /f "tokens=1,2 delims==" %%A in ("%%~L") do (
+                set "x=%~1"
+                set "y=%%~A"
+                set "z=%%~B"
+                call :trim x
+                call :trim y
+                call :trim z
+                if /I "!X!"=="!Y!" (
+                    set got=1
+                    if [%3]==[] (echo.!Z!) else (set "%~3=!Z!")
+                    exit /b 0
+                )
+            )
+        )
+    )
+    if "%got%"=="0" (
+        if not [%2]==[] (
+            set "x=%~2"
+            call :trim x
+            if [%3]==[] (echo.!X!) else (set "%~3=!X!")
+        ) else (echo.)
+    )
+    exit /b 0
+:trim
+    if [%1]==[] exit /b 1
+    set "inVar=%~1"
+    set "stripChar=%~2"
+    if not defined stripChar set "stripChar= "
+    call set "workVar=%%%inVar%%%"
+    :: TODO: only count up characters here?
+    :loop
+        if "%workVar:~-1%" EQU "%stripChar%" (
+            set "workVar=%workVar:~0,-1%"
+            goto :loop
+        )
+    :: also trim leading
+    :loop2
+        if "%workVar:~0,1%" EQU "%stripChar%" (
+            set "workVar=%workVar:~1%"
+            goto :loop2
+        )
+    set "%inVar%=%workVar%"
+    exit /b 0
+:premain
     set SYSDIR=system32
     IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" ( set SYSDIR=SysWOW64 )
     set LZ1=%SYSTEMROOT%\%SYSDIR%
     ::				cackles
     %q% 2>&1 "%LZ1%\cacls.exe" "%LZ1%\config\system"
     if '%errorlevel%' NEQ '0' (
-        echo Requesting administrative privileges...
-        goto uacp
-    ) else ( goto main )
-
-    :uacp
-        echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-        set params= %*
-        echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
-        "%temp%\getadmin.vbs"
-        del "%temp%\getadmin.vbs"
-        exit /B
-::
-:: }
-::
-
+        :: i'm such a superuser that i can't even test going from unelevated to elevated anymore
+        :: the temp VBS file has this script ending up at this spot over and over now
+        echo Elevated privileges are not available.
+        echo This script cannot run without them.
+        echo Try rerunning as administrator.
+        timeout /T 10
+        exit
+    )
+    :: https://stackoverflow.com/questions/1894967/how-to-request-administrator-access-inside-a-batch-file
 :main
     pushd "%CD%"
     CD /D "%~dp0"
-
-echo TEST
-
-pause
-
-exit
+    echo TEST
+    pause
+    exit

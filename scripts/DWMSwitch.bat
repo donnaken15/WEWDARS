@@ -8,14 +8,14 @@ if not "%~1"=="waitdwm" goto %1
     %dwmfind% && goto kill || goto restore
 
 :restore
-    %dwmfind% && echo DWM is already active && exit /b
+    %dwmfind% && echo DWM is already active&& exit /b
     title DWM (Unfortunate) restorer...
     echo Temporarily suspending Aero prone processes
     echo Getting Classic Theme state
     "%~dp0tools\miniSCT" 5
     set CTT=%ERRORLEVEL%
     if "%ERRORLEVEL%"=="1" (
-        :: suspend programs that are quick to try to access aero theme again,
+        :: suspend programs that are quick to try and access aero theme again,
         :: like explorer, everything, or process explorer, where menu bars
         :: and run window will not appear in classic theme
         for /f "usebackq delims=" %%S in ("AeroProne.txt") do ( pssuspend "%%~S" 2>nul )
@@ -34,7 +34,7 @@ if not "%~1"=="waitdwm" goto %1
     exit /b
 
 :kill
-    %dwmfind% || echo DWM is ALREADY DEAD. HAHAHAHA!!! ..... && exit /b
+    %dwmfind% || echo DWM is ALREADY DEAD. HAHAHAHA!!! .....&& exit /b
     title DWM DESTROYER!!
     echo Killing common UWP apps
     call KillShell

@@ -7,3 +7,4 @@ SettingSyncHost.exe
 SystemSettings.exe
 StartMenuExperience.exe
 TextInputHost.exe
+TabTip.exe
