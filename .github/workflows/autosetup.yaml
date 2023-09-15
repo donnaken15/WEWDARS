@@ -13,7 +13,7 @@ on:
         required: false
         type: boolean
 jobs:
-  test:
+  install:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
             main.bat
             scripts
             .github
-      - name: Test
+      - name: Auto-setup
         run: |
           cmd /c call "$PWD/scripts/SetKeyValue" RunTronScript ${{ inputs.tron == true && 1 || 0 }} "$PWD/config.ini"
           cmd /c "$PWD/.github/workflows/autosetup.bat"

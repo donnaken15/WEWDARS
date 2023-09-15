@@ -20,30 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtApiDotNet", "tools\src\Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RibbonSever", "tools\src\RibbonSever\RibbonSever.csproj", "{1858BA45-1E16-4559-9A39-CE188BE1E72A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7339965-07EE-4F4A-8BBE-1FC392DFCC2C}"
-    ProjectSection(SolutionItems) = preProject
-        scripts\AeroProne.txt = scripts\AeroProne.txt
-        scripts\AutoStart.bat = scripts\AutoStart.bat
-        scripts\CTDisable.bat = scripts\CTDisable.bat
-        scripts\CTEnable.bat = scripts\CTEnable.bat
-        scripts\DeInit.bat = scripts\DeInit.bat
-        scripts\DWMKill.bat = scripts\DWMKill.bat
-        scripts\DWMReload.bat = scripts\DWMReload.bat
-        scripts\DWMRestore.bat = scripts\DWMRestore.bat
-        scripts\DWMSwitch.bat = scripts\DWMSwitch.bat
-        scripts\DWMToggle.bat = scripts\DWMToggle.bat
-        scripts\IdleEvent.bat = scripts\IdleEvent.bat
-        scripts\Init.bat = scripts\Init.bat
-        scripts\KeyValue.bat = scripts\KeyValue.bat
-        scripts\KillShell.bat = scripts\KillShell.bat
-        scripts\KillSvc.bat = scripts\KillSvc.bat
-        scripts\SetKeyValue.bat = scripts\SetKeyValue.bat
-        scripts\ShadowServices.txt = scripts\ShadowServices.txt
-        scripts\Trim.bat = scripts\Trim.bat
-        scripts\UnnecessaryProcesses.txt = scripts\UnnecessaryProcesses.txt
-        scripts\UnnecessaryServices.txt = scripts\UnnecessaryServices.txt
-        scripts\UWP.txt = scripts\UWP.txt
-    EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scripts", "scripts\scripts.csproj", "{5CF9002D-E103-4AC3-AF70-23C1BDBE769F}"
 EndProject
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +33,8 @@ Global
         {6AEB5004-6093-4C23-AEAE-911D64CACC58}.Release|Any CPU.Build.0 = Release|Any CPU
         {1858BA45-1E16-4559-9A39-CE188BE1E72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
         {1858BA45-1E16-4559-9A39-CE188BE1E72A}.Release|Any CPU.Build.0 = Release|Any CPU
+        {5CF9002D-E103-4AC3-AF70-23C1BDBE769F}.Release|Any CPU.ActiveCfg = Debug|x86
+        {5CF9002D-E103-4AC3-AF70-23C1BDBE769F}.Release|Any CPU.Build.0 = Debug|x86
     EndGlobalSection
     GlobalSection(SolutionProperties) = preSolution
         HideSolutionNode = FALSE

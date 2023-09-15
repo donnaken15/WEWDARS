@@ -13,7 +13,7 @@ for /f "usebackq delims=" %%T in (
         )
         rem have to do this stupid stuff
         rem because i can't just filter "N/A" window title
-        rem also why does :: not work here, because you're stupid
+        rem also why does :: not work specifically here, because you're stupid
         if "%%~B"==" N/A" (
             taskkill /f /pid !e!
             set got=1

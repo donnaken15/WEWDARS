@@ -1,3 +1,4 @@
+AppXSvc
 Winmgmt
 UmRdpService
 lfsvc
