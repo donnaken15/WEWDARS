@@ -1,3 +1,4 @@
-* text=auto eol=lf filter=tabspace
+* text=auto eol=lf filter=
 *.yaml eof=lf filter=
 *.cs eol=crlf
+*.bat eol=crlf
